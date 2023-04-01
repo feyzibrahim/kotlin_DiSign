@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AddEventActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/addEventLayout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/add_event_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="120dp"
+                android:text="@string/add_event"
+                android:textSize="60sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/addEventBackButton" />
+
+            <EditText
+                android:id="@+id/addEventName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="32dp"
+                android:autofillHints="@string/name"
+                android:ems="10"
+                android:hint="@string/title"
+                android:inputType="textPersonName|textCapSentences"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="15dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/add_event_title" />
+
+            <EditText
+                android:id="@+id/addEventOrganizer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="@string/name_of_organization"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="15dp"
+                android:inputType="textPersonName|textCapSentences"
+                app:layout_constraintEnd_toEndOf="@+id/addEventName"
+                app:layout_constraintStart_toStartOf="@+id/addEventName"
+                app:layout_constraintTop_toBottomOf="@+id/addEventName"
+                android:autofillHints="@string/name_of_organization" />
+
+            <EditText
+                android:id="@+id/addEventPlace"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ems="10"
+                android:hint="@string/place"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="15dp"
+                android:inputType="textPersonName|textCapSentences"
+                app:layout_constraintEnd_toEndOf="@+id/addEventOrganizer"
+                app:layout_constraintStart_toStartOf="@+id/addEventOrganizer"
+                app:layout_constraintTop_toBottomOf="@+id/addEventOrganizer"
+                android:autofillHints="@string/place" />
+
+            <EditText
+                android:id="@+id/addEventDate"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:autofillHints="@string/date"
+                android:ems="10"
+                android:hint="@string/date"
+                android:maxLength="10"
+                android:inputType="date"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="15dp"
+                app:layout_constraintEnd_toStartOf="@+id/dateChooser"
+                app:layout_constraintStart_toStartOf="@+id/addEventPlace"
+                app:layout_constraintTop_toBottomOf="@+id/addEventPlace" />
+
+            <EditText
+                android:id="@+id/addEventTime"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="16dp"
+                android:autofillHints="@string/choose_a_time"
+                android:ems="10"
+                android:hint="@string/choose_a_time"
+                android:maxLength="8"
+                android:inputType="textCapSentences"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="15dp"
+                app:layout_constraintEnd_toStartOf="@+id/timeChooser"
+                app:layout_constraintStart_toStartOf="@+id/addEventDate"
+                app:layout_constraintTop_toBottomOf="@+id/addEventDate" />
+
+            <EditText
+                android:id="@+id/addEventLimit"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:autofillHints="@string/limit"
+                android:ems="10"
+                android:hint="@string/limit"
+                android:inputType="number"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="15dp"
+                app:layout_constraintEnd_toEndOf="@+id/timeChooser"
+                app:layout_constraintHorizontal_bias="1.0"
+                app:layout_constraintStart_toStartOf="@+id/addEventTime"
+                app:layout_constraintTop_toBottomOf="@+id/addEventTime" />
+
+            <Button
+                android:id="@+id/addEvent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                android:layout_marginBottom="50dp"
+                android:background="@drawable/round_button_yellow"
+                android:text="@string/create"
+                android:textColor="#FFFFFF"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@+id/addEventLimit"
+                app:layout_constraintStart_toStartOf="@+id/addEventLimit"
+                app:layout_constraintTop_toBottomOf="@+id/addEventLimit" />
+
+            <Button
+                android:id="@+id/dateChooser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="1dp"
+                android:text="@string/choose"
+                android:textColor="@android:color/white"
+                android:background="@drawable/round_button_yellow"
+                app:layout_constraintBottom_toBottomOf="@+id/addEventDate"
+                app:layout_constraintEnd_toEndOf="@+id/addEventPlace"
+                app:layout_constraintTop_toTopOf="@+id/addEventDate" />
+
+            <Button
+                android:id="@+id/timeChooser"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/choose"
+                android:background="@drawable/round_button_yellow"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="@+id/addEventTime"
+                app:layout_constraintEnd_toEndOf="@+id/dateChooser"
+                app:layout_constraintTop_toTopOf="@+id/addEventTime" />
+
+            <ImageButton
+                android:id="@+id/addEventBackButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="24dp"
+                android:background="@drawable/ic_arrow_back"
+                android:contentDescription="@string/dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/qrLayoutInEvent"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/layoutToBeExportedFromEvent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toTopOf="@+id/saveQr_Button_inEvent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/fightTextInEvent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="32dp"
+                    android:layout_marginEnd="32dp"
+                    android:gravity="center"
+                    android:text="@string/fight"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/qrTitleInEvent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:textSize="24sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/fightTextInEvent" />
+
+                <TextView
+                    android:id="@+id/qrPlaceInEvent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="32dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:gravity="end"
+                    app:layout_constraintEnd_toStartOf="@+id/dotInEvent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/qrTitleInEvent" />
+
+                <TextView
+                    android:id="@+id/qrOrganizerInEvent"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="32dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/dotInEvent"
+                    app:layout_constraintTop_toBottomOf="@+id/qrTitleInEvent" />
+
+                <TextView
+                    android:id="@+id/dotInEvent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/dot"
+                    app:layout_constraintEnd_toEndOf="@+id/qrTitleInEvent"
+                    app:layout_constraintStart_toStartOf="@+id/qrTitleInEvent"
+                    app:layout_constraintTop_toBottomOf="@+id/qrTitleInEvent" />
+
+                <ImageView
+                    android:id="@+id/qrViewInEvent"
+                    android:layout_width="350dp"
+                    android:layout_height="350dp"
+                    android:contentDescription="@string/dp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.491"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/dotInEvent" />
+
+                <TextView
+                    android:id="@+id/scanRequestInEvent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/ScanReq"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/qrViewInEvent" />
+
+                <TextView
+                    android:id="@+id/downloadRequestInEvent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/downReq"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/scanRequestInEvent" />
+
+                <TextView
+                    android:id="@+id/appNameInEvent"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:text="@string/appFullName"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/downloadRequestInEvent" />
+
+                <ImageView
+                    android:id="@+id/imageView"
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:contentDescription="@string/dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="@+id/appNameInEvent"
+                    app:layout_constraintStart_toStartOf="@+id/appNameInEvent"
+                    app:layout_constraintTop_toBottomOf="@+id/appNameInEvent"
+                    app:srcCompat="@raw/log2" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <Button
+                android:id="@+id/saveQr_Button_inEvent"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="50dp"
+                android:layout_marginEnd="50dp"
+                android:layout_marginBottom="16dp"
+                android:background="@drawable/round_button_yellow"
+                android:text="@string/share"
+                android:textColor="@android:color/white"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+            <ProgressBar
+                android:id="@+id/qrProgress_inEvent"
+                style="?android:attr/progressBarStyle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
